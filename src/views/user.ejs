@@ -70,7 +70,7 @@
 
                             <tr>
                                 <th scope="row">
-                                    <%=index +1 %>
+                                    <%=item.id %>
                                 </th>
                                 <td>
                                     <%= item.email %>
@@ -80,7 +80,10 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <form style="display:inline" action="/delte-user/<%= item.id%>" method="post">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                                    </form>
                                 </td>
 
                             </tr>

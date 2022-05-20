@@ -19,6 +19,9 @@ const initWebRoutes = (app) => {
   // day du lieu len
   router.post("/users/create-user", homeController.handleCreateNewUser);
 
+  // delete
+  router.post("/delte-user/:id", homeController.handeDeleteUser);
+
   return app.use("/", router);
 };
 
