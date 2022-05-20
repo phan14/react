@@ -6,10 +6,11 @@ const handleHelloWord = (req, res) => {
   return res.render("home.ejs");
 };
 
-const handleUserPage = (req, res) => {
+const handleUserPage = async (req, res) => {
   // model > get data form database
+  let userList = await userService.getUserList();
 
-  return res.render("user.ejs");
+  return res.render("user.ejs", { userList });
 };
 
 const handleCreateNewUser = (req, res) => {
@@ -19,7 +20,6 @@ const handleCreateNewUser = (req, res) => {
 
   // userService.createNewUser(email, password, username);
 
-  userService.getUserList();
   return res.send("handleCreateNewUser");
 };
 
