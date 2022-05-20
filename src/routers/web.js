@@ -16,6 +16,8 @@ const initWebRoutes = (app) => {
   // });-- cach 1
 
   router.get("/user", homeController.handleUserPage);
+  // day du lieu len
+  router.post("/users/create-user", homeController.handleCreateNewUser);
 
   return app.use("/", router);
 };
